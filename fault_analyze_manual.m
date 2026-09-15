@@ -18,14 +18,6 @@ time_vec_2 = SegyHeade2.time;
 [XX2,YY2] = meshgrid(trace_vec_2,time_vec_2);
 Fseis = scatteredInterpolant(XX2(:),YY2(:),Data2(:));
 
-%--------old version------------------------------
-% fault_xvec = linspace(Df.pt1_trace(index),Df.pt2_trace(index)-15,1000);
-% fault_xvec_1 = linspace(Df.pt1_trace(index)-10,Df.pt2_trace(index)-15,1000);
-% fault_xvec_2 = linspace(Df.pt1_trace(index)+10,Df.pt2_trace(index)+15,1000);
-% fault_yvec = linspace(Df.pt1_time(index),Df.pt2_time(index),1000);
-% dy = fault_yvec(2) - fault_yvec(1);
-%--------------------------------------------------
-
 %--------new test version------------------------
 dy = 0.00025; % 0.25 ms for this prototype
 fault_yvec = Df.pt1_time(index):dy:Df.pt2_time(index);
