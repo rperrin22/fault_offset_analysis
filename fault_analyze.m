@@ -1,7 +1,5 @@
 function fault_analyze(index,Df,H076,H090,segy_filename,Data,trace_vec,time_vec)
 
-%   index=8;
-
 % get fault center x-position
 fault_x_pos = mean([Df.pt1_trace(index); Df.pt2_trace(index)]);
 mat_min = round(fault_x_pos - 500);
